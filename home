@@ -1,0 +1,58 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Página Principal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://wallpapercg.com/download/cute-hello-kitties-3840x2160-15956.png');
+      background-repeat: repeat;
+      background-size: cover;
+      background-position: center center;
+      color: black; /* Alteração para a cor preta */
+    }
+
+    #mainContent {
+      text-align: center;
+      padding: 50px;
+    }
+
+    .accessButton {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    #bomDiaButton {
+      background-color: pink;
+      color: white;
+    }
+
+    #bomDiaFeriadoButton {
+      background-color: lightblue;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="mainContent">
+    <h1>Bem-vindo ao bom dia de cada dia da Vanessa</h1>
+    <p>Esta é a página principal com botões para acessar diferentes mensagens de "Bom dia".</p>
+    <button id="bomDiaButton" class="accessButton" onclick="redirectToOtherPage('BOMDIA.HTML')">Bom dia - 14/11/2023</button>
+    <button id="bomDiaFeriadoButton" class="accessButton" onclick="redirectToOtherPage('BOMDIA_FERIADO.HTML')">Bom dia do feriado - 15/11/2023</button>
+  </div>
+
+  <script>
+    function redirectToOtherPage(pageName) {
+      window.location.href = `file:///C:/Users/didir/Desktop/Site/${pageName}`;
+    }
+  </script>
+</body>
+</html>
