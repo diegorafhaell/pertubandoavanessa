@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Bom dia!!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://wallpapercg.com/download/cute-hello-kitties-3840x2160-15956.png'); /* Substitua pelo caminho real da sua nova imagem de fundo */
+      background-repeat: repeat; /* ou 'no-repeat' se você quiser que a imagem de fundo apareça apenas uma vez */
+      background-size: cover; /* Ajuste o tamanho da imagem de fundo */
+      background-position: center center; /* Ajuste a posição da imagem de fundo */
+      color: black; /* Altere a cor do texto para preto */
+    }
+
+    #myHeader {
+      background-color: pink; /* Mude a cor de fundo para rosa */
+      color: white;
+      padding: 10px;
+    }
+
+    #content {
+      text-align: center;
+    }
+
+    #portuguese,
+    #english,
+    #spanish,
+    #french,
+    #italian {
+      color: black; /* Altere a cor do texto para preto */
+      font-weight: bold; /* Adicione negrito para os textos grandes */
+    }
+
+    .language-content {
+      display: none;
+    }
+
+    #languageMenu {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    #languageMenu button {
+      margin: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header id="myHeader">
+    <h1 style="text-align: center;"><b>Bom dia</b>, Vanessa.</h1>
+  </header>
+
+  <div id="content" style="text-align: center;">
+    <p>Você acordando.</p>
+    <img src="https://media.giphy.com/media/Y0NhkIdyT3TVBDWLkG/giphy.gif" alt="Grinch GIF">
+  </div>
+
+  <div id="portuguese" class="language-content">
+    <p>
+      <b>Bom dia</b>!
+      Que este novo dia seja repleto de alegrias, conquistas e momentos especiais. Que cada desafio seja uma oportunidade para mostrar sua força e determinação. Que a luz do sol ilumine seus caminhos, e que cada sorriso que encontrar pelo caminho aqueça o seu coração.
+      Lembre-se sempre do poder que há em você para superar qualquer obstáculo. Que este dia seja o início de uma jornada cheia de realizações e boas surpresas.
+      Tenha um dia maravilhoso!
+    </p>
+  </div>
+
+  <div id="english" class="language-content">
+    <p>
+      <b>Good morning</b>!
+      May this new day be filled with joy, achievements, and special moments. May each challenge be an opportunity to showcase your strength and determination. May the sunlight illuminate your paths, and may every smile you encounter along the way warm your heart.
+      Always remember the power within you to overcome any obstacle. May this day mark the beginning of a journey filled with accomplishments and pleasant surprises.
+      Have a wonderful day!
+    </p>
+  </div>
+
+  <div id="spanish" class="language-content">
+    <p>
+      <b>¡Buenos días</b>!
+      Que este nuevo día esté lleno de alegrías, logros y momentos especiales. Que cada desafío sea una oportunidad para mostrar tu fuerza y determinación. Que la luz del sol ilumine tus caminos y que cada sonrisa que encuentres en el camino caliente tu corazón.
+      Recuerda siempre el poder que tienes para superar cualquier obstáculo. Que este día sea el comienzo de un viaje lleno de logros y buenas sorpresas.
+      ¡Ten un día maravilloso!
+    </p>
+  </div>
+
+  <div id="french" class="language-content">
+    <p>
+      <b>Bonjour</b>!
+      Que cette nouvelle journée soit remplie de joie, de réussites et de moments spéciaux. Que chaque défi soit l'occasion de montrer ta force et détermination. Que la lumière du soleil illumine tes chemins et que chaque sourire que tu rencontres sur ton chemin réchauffe ton cœur.
+      N'oublie jamais le pouvoir qui est en toi pour surmonter n'importe quel obstacle. Que cette journée marque le début d'un voyage rempli de réalisations et de bonnes surprises.
+      Passe une merveilleuse journée!
+    </p>
+  </div>
+
+  <div id="italian" class="language-content">
+    <p>
+      <b>Buongiorno</b>!
+      Che questo nuovo giorno sia ricco di gioia, successi e momenti speciali. Che ogni sfida sia un'opportunità per mostrare la tua forza e determinazione. Che la luce del sole illumini i tuoi percorsi, e che ogni sorriso che incontri lungo la strada riscaldi il tuo cuore.
+      Ricorda sempre il potere che hai dentro di te per superare ogni ostacolo. Che questo giorno segni l'inizio di un viaggio pieno di realizzazioni e piacevoli sorprese.
+      Buona giornata!
+    </p>
+  </div>
+
+  <div id="languageMenu">
+    <button onclick="changeLanguage('portuguese')">Português</button>
+    <button onclick="changeLanguage('english')">English</button>
+    <button onclick="changeLanguage('spanish')">Español</button>
+    <button onclick="changeLanguage('french')">Français</button>
+    <button onclick="changeLanguage('italian')">Italiano</button>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function changeLanguage(language) {
+      // Hide all language divs
+      var languageDivs = document.querySelectorAll('.language-content');
+      languageDivs.forEach(function (div) {
+        div.style.display = 'none';
+      });
+
+      // Show the selected language div
+      document.getElementById(language).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
