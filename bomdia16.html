@@ -1,0 +1,171 @@
+<!-- BOMDIA_FERIADO.HTML -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Bom dia, Vanessa!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://wallpapercg.com/download/cute-hello-kitties-3840x2160-15956.png');
+      background-repeat: repeat;
+      background-size: cover;
+      background-position: center center;
+      color: black; /* Alteração para a cor preta */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    #mainContent {
+      text-align: center;
+      padding: 50px;
+    }
+
+    .languageButton {
+      background-color: #3498db;
+      color: white;
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .languageButton:hover {
+      background-color: #2980b9;
+    }
+
+    #backButton {
+      margin-top: 20px;
+      background-color: #2ecc71;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #backButton:hover {
+      background-color: #27ae60;
+    }
+
+    /* Esconde o player de áudio */
+    audio {
+      display: none;
+    }
+
+    #playButton {
+      background-color: #e74c3c;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    #playButton:hover {
+      background-color: #c0392b;
+    }
+
+    .morningGif {
+      width: 100%;
+      max-width: 250px; /* Ajuste o tamanho máximo conforme necessário */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="mainContent">
+    <div id="contentContainer">
+      <img class="morningGif" src="https://media.tenor.com/97BHtExd-GcAAAAd/wolong-xiaoxiao.gif" alt="Bom dia, Vanessa!">
+      <h1 id="greeting">Bom dia, Vanessa!</h1>
+      <p id="holidayWishes">Espero que tenha aproveitado o feriado e recarregado as energias. Que esta quinta-feira traga uma suave transição de volta à rotina, com a certeza de que cada novo dia é uma oportunidade para recomeçar. Que o encanto deste amanhecer ilumine seu caminho e que as experiências de hoje sejam tão especiais quanto o feriado que passou. Que seja um dia produtivo e repleto de momentos positivos!</p>
+    </div>
+
+    <div>
+      <button class="languageButton" onclick="changeLanguage('pt')">Português</button>
+      <button class="languageButton" onclick="changeLanguage('en')">Inglês</button>
+      <button class="languageButton" onclick="changeLanguage('es')">Espanhol</button>
+      <button class="languageButton" onclick="changeLanguage('fr')">Francês</button>
+      <button class="languageButton" onclick="changeLanguage('de')">Alemão</button>
+      <button class="languageButton" onclick="changeLanguage('it')">Italiano</button>
+      <button class="languageButton" onclick="changeLanguage('ja')">Japonês</button>
+      <button class="languageButton" onclick="changeLanguage('ko')">Coreano</button>
+      <button class="languageButton" onclick="changeLanguage('ru')">Russo</button>
+      <button class="languageButton" onclick="changeLanguage('zh')">Chinês</button>
+    </div>
+
+    <!-- Botão de reprodução -->
+    <button id="playButton" onclick="playMusic()">Essa musica você vai gostar.</button>
+
+    <!-- Reproduz a música automaticamente sem exibir o player -->
+    <audio id="audio" volume="0.5" autoplay>
+      <source src="https://diegorafhaell.github.io/pertubandoavanessa/tacaca.mp3" type="audio/mp3">
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <button id="backButton" onclick="goToHomePage()">Voltar para a Página Inicial</button>
+  </div>
+
+<script>
+    function changeLanguage(selectedLanguage) {
+      // Chame uma função para atualizar o conteúdo com base no idioma selecionado
+      updateContent(selectedLanguage);
+    }
+  
+    function updateContent(language) {
+      const greetings = {
+        pt: 'Bom dia, Vanessa!',
+        en: 'Good morning, Vanessa!',
+        es: '¡Buenos días, Vanessa!',
+        fr: 'Bonjour, Vanessa!',
+        de: 'Guten Morgen, Vanessa!',
+        it: 'Buongiorno, Vanessa!',
+        ja: 'おはようございます、Vanessaさん！',
+        ko: '안녕하세요, Vanessa씨!',
+        ru: 'Доброе утро, Ванесса!',
+        zh: '早上好，Vanessa！',
+      };
+  
+      const holidayWishes = {
+        pt: 'Espero que tenha aproveitado o feriado e recarregado as energias. Que esta quinta-feira traga uma suave transição de volta à rotina, com a certeza de que cada novo dia é uma oportunidade para recomeçar. Que o encanto deste amanhecer ilumine seu caminho e que as experiências de hoje sejam tão especiais quanto o feriado que passou. Que seja um dia produtivo e repleto de momentos positivos!',
+        en: 'Hope you enjoyed the holiday and recharged your energy. May this Thursday bring a smooth transition back to routine, with the certainty that each new day is an opportunity to start anew. May the charm of this dawn light up your path, and may today\'s experiences be as special as the holiday that passed. May it be a productive day filled with positive moments!',
+        es: 'Espero que hayas disfrutado del feriado y recargado energías. Que este jueves traiga una transición suave de vuelta a la rutina, con la certeza de que cada nuevo día es una oportunidad para comenzar de nuevo. Que el encanto de este amanecer ilumine tu camino y que las experiencias de hoy sean tan especiales como el feriado que pasó. ¡Que sea un día productivo y lleno de momentos positivos!',
+        fr: 'J\'espère que vous avez bien profité du jour férié et rechargé vos énergies. Que ce jeudi apporte une transition douce vers le retour à la routine, avec la certitude que chaque nouveau jour est une opportunité de recommencer. Que le charme de cette aube éclaire votre chemin et que les expériences d\'aujourd\'hui soient aussi spéciales que le jour férié écoulé. Que ce soit une journée productive et pleine de moments positifs !',
+        de: 'Ich hoffe, Sie haben das Wochenende genossen und Ihre Energie aufgeladen. Möge dieser Donnerstag einen sanften Übergang zurück zur Routine bringen, mit der Gewissheit, dass jeder neue Tag eine Gelegenheit zum Neuanfang ist. Möge der Charme dieses Morgens deinen Weg erhellen und mögen die heutigen Erfahrungen genauso besonders sein wie der vergangene Feiertag. Möge es ein produktiver Tag voller positiver Momente sein!',
+        it: 'Spero che tu abbia apprezzato la festa e ricaricato le energie. Che questo giovedì porti una transizione dolce al ritorno alla routine, con la certezza che ogni nuovo giorno è un\'opportunità per ricominciare. Che il fascino di questo alba illumini il tuo cammino e che le esperienze di oggi siano speciali quanto la festa trascorsa. Che sia una giornata produttiva e ricca di momenti positivi!',
+        ja: 'お休みを楽しんでエネルギーを充電できたといいね。この木曜日がルーチンに戻る滑らかな移行をもたらし、新しい日が始まる機会であるという確信を持っています。この夜明けの魅力があなたの道を照らし、今日の経験が過ぎ去った休暇と同じくらい特別であることを願っています。生産的でポジティブな瞬間に満ちた一日でありますように！',
+        ko: '휴일을 즐기시고 에너지를 충전하셨으면 좋겠습니다. 이번 목요일이 루틴으로의 부드러운 전환을 가져오고 각 새로운 날이 새롭게 시작할 기회임을 확신합니다. 이 새벽의 매력이 당신의 길을 밝히고 오늘의 경험이 지난 휴일만큼 특별했으면 좋겠습니다. 생산적이고 긍정적인 순간으로 가득 찬 하루가 되시길 바랍니다!',
+        ru: 'Надеюсь, вы насладились выходными и пополнили энергию. Пусть этот четверг принесет плавный переход к повседневной рутине, с уверенностью в том, что каждый новый день - это возможность начать заново. Пусть очарование этого рассвета осветит ваш путь, и пусть сегодняшние впечатления будут такими же особенными, как и прошедший праздник. Пусть это будет продуктивным днем, полным положительных моментов!',
+        zh: '希望您度过了愉快的假期并充实了能量。愿这个星期四带来回到日常的平稳过渡，确信每一个新的一天都是重新开始的机会。愿这个黎明的魅力照亮您的道路，愿今天的经历像度过的假期一样特别。愿这是一个充满积极时刻的富有成效的一天！',
+      };
+  
+      document.getElementById('greeting').textContent = greetings[language];
+      document.getElementById('holidayWishes').textContent = holidayWishes[language];
+    }
+  
+    function goToHomePage() {
+      window.location.href = 'https://diegorafhaell.github.io/pertubandoavanessa/';
+    }
+  
+    // Função para iniciar a reprodução da música
+    function playMusic() {
+      const audio = document.getElementById('audio');
+      audio.play();
+    }
+  </script>
+  </body>
+  
+  </html>
+  
