@@ -1,0 +1,172 @@
+<!-- BOMDIA_FERIADO.HTML -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Bom dia, Vanessa!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://wallpapercg.com/download/cute-hello-kitties-3840x2160-15956.png');
+      background-repeat: repeat;
+      background-size: cover;
+      background-position: center center;
+      color: black; /* Alteração para a cor preta */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    #mainContent {
+      text-align: center;
+      padding: 50px;
+    }
+
+    .languageButton {
+      background-color: #3498db;
+      color: white;
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .languageButton:hover {
+      background-color: #2980b9;
+    }
+
+    #backButton {
+      margin-top: 20px;
+      background-color: #2ecc71;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #backButton:hover {
+      background-color: #27ae60;
+    }
+
+    /* Esconde o player de áudio */
+    audio {
+      display: none;
+    }
+
+    #playButton {
+      background-color: #e74c3c;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    #playButton:hover {
+      background-color: #c0392b;
+    }
+
+    .morningGif {
+      width: 100%;
+      max-width: 250px; /* Ajuste o tamanho máximo conforme necessário */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="mainContent">
+    <div id="contentContainer">
+      <h2 id="texto">você antes de comer ai</h2>
+      <img class="morningGif" src="https://diegorafhaell.github.io/pertubandoavanessa/xiaogif.gif" alt="Bom dia, Vanessa!">
+      <h1 id="greeting">Bom dia, Vanessa!</h1>
+      <p id="holidayWishes">puta que pariu slc sextou caraiiiiiiiiiiiiiiiiiiiii</p>
+    </div>
+
+    <div>
+      <button class="languageButton" onclick="changeLanguage('pt')">Português</button>
+      <button class="languageButton" onclick="changeLanguage('en')">Inglês</button>
+      <button class="languageButton" onclick="changeLanguage('es')">Espanhol</button>
+      <button class="languageButton" onclick="changeLanguage('fr')">Francês</button>
+      <button class="languageButton" onclick="changeLanguage('de')">Alemão</button>
+      <button class="languageButton" onclick="changeLanguage('it')">Italiano</button>
+      <button class="languageButton" onclick="changeLanguage('ja')">Japonês</button>
+      <button class="languageButton" onclick="changeLanguage('ko')">Coreano</button>
+      <button class="languageButton" onclick="changeLanguage('ru')">Russo</button>
+      <button class="languageButton" onclick="changeLanguage('zh')">Chinês</button>
+    </div>
+
+    <!-- Botão de reprodução -->
+    <button id="playButton" onclick="playMusic()">PUTA QUE PARIUUUUUU</button>
+
+    <!-- Reproduz a música automaticamente sem exibir o player -->
+    <audio id="audio" volume="1" autoplay>
+      <source src="https://diegorafhaell.github.io/pertubandoavanessa/PUTAQUEPARIU.mp3" type="audio/mp3">
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <button id="backButton" onclick="goToHomePage()">Voltar para a Página Inicial</button>
+  </div>
+
+<script>
+    function changeLanguage(selectedLanguage) {
+      // Chame uma função para atualizar o conteúdo com base no idioma selecionado
+      updateContent(selectedLanguage);
+    }
+  
+    function updateContent(language) {
+      const greetings = {
+        pt: 'Bom dia, Vanessa!',
+        en: 'Good morning, Vanessa!',
+        es: '¡Buenos días, Vanessa!',
+        fr: 'Bonjour, Vanessa!',
+        de: 'Guten Morgen, Vanessa!',
+        it: 'Buongiorno, Vanessa!',
+        ja: 'おはようございます、Vanessaさん！',
+        ko: '안녕하세요, Vanessa씨!',
+        ru: 'Доброе утро, Ванесса!',
+        zh: '早上好，Vanessa！',
+      };
+  
+      const holidayWishes = {
+        pt: 'Uau, a sexta-feira chegou!',
+        en: 'Wow, Friday is here!',
+        es: '¡Vaya, llegó el viernes!',
+        fr: 'Waouh, cest vendredi !',
+        de: 'Wow, Freitag ist da!',
+        it: 'Wow, è venerdì!',
+        ja: 'わあ、金曜日がきました！',
+        ko: '와, 금요일이 왔어요!',
+        ru: 'Вау, пятница наступила!',
+        zh: '哇，星期五来了！',
+      };
+  
+      document.getElementById('greeting').textContent = greetings[language];
+      document.getElementById('holidayWishes').textContent = holidayWishes[language];
+    }
+  
+    function goToHomePage() {
+      window.location.href = 'https://diegorafhaell.github.io/pertubandoavanessa/';
+    }
+  
+    // Função para iniciar a reprodução da música
+    function playMusic() {
+      const audio = document.getElementById('audio');
+      audio.play();
+    }
+  </script>
+  </body>
+  
+  </html>
+  
