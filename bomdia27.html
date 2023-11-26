@@ -68,11 +68,14 @@
 </head>
 
 <body onload="playMusic()">
-    
+
     <div id="mainContent">
         <h1>Bom dia Vanessa!</h1>
         <p>Voltamos a programations normal o unico problema é que é segunda, aqui odiamos segunda</p>
     </div>
+
+        <button id="playButton" onclick="playMusic()">Iniciar Música</button>
+        <button id="pauseButton" onclick="pauseMusic()" style="display: none;">Pausar Música</button>
 
         <p><h1>↧</h1></p>
         
@@ -121,11 +124,6 @@
             </body>
 
         </div>
-
-        
-
-        <button id="playButton" onclick="playMusic()">Iniciar Música</button>
-        <button id="pauseButton" onclick="pauseMusic()" style="display: none;">Pausar Música</button>
 
     <script>
         var audio = new Audio('https://diegorafhaell.github.io/pertubandoavanessa/seqso.mp3');
