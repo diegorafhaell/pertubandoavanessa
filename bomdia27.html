@@ -47,6 +47,10 @@
             transition: background-color 0.3s ease;
         }
 
+        audio {
+      display: none;
+    }
+
         @media only screen and (max-width: 600px) {
             /* Ajuste o tamanho máximo do texto para telas menores */
             #texto {
@@ -64,8 +68,7 @@
 </head>
 
 <body onload="playMusic()">
-
-
+    
     <div id="mainContent">
         <h1>Bom dia Vanessa!</h1>
         <p>Voltamos a programations normal o unico problema é que é segunda, aqui odiamos segunda</p>
@@ -119,6 +122,8 @@
 
         </div>
 
+        
+
         <button id="playButton" onclick="playMusic()">Iniciar Música</button>
         <button id="pauseButton" onclick="pauseMusic()" style="display: none;">Pausar Música</button>
 
@@ -138,9 +143,6 @@
         }
     </script>
 
-    <script>
-        // Se precisar de scripts JavaScript, adicione aqui
-    </script>
 </body>
 
 </html>
