@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=0.8">
   <link rel="stylesheet" href="styles.css">
   <title>Página Principal</title>
   <style>
@@ -13,7 +13,7 @@
       background-repeat: repeat;
       background-size: cover;
       background-position: center center;
-      color: #333; /* Cor do texto */
+      color: #333;
       margin: 0;
       padding: 0;
       display: flex;
@@ -22,9 +22,56 @@
       min-height: 100vh;
     }
 
+    .prev, .next {
+  position: absolute;
+  top: 50%; /* Ajuste a porcentagem conforme necessário */
+  width: auto;
+  padding: 5px;
+  margin-top: -20px; /* Metade da altura das setas */
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+}
+
+.prev {
+  left: 0px;
+  border-radius: 3px 0 0 3px;
+}
+.next {
+  right: 0px;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+    .slideshow-container {
+      max-width: 500px;
+      position: absolute;
+      top: 50px; /* ou qualquer valor desejado para a distância do topo */
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.slideshow-header {
+      font-size: 20px;
+      text-align: center;
+      color: #800080; /* Cor do título do cabeçalho */
+      margin-bottom: 24px;
+    }
+
     #mainContent {
       text-align: center;
+      position: absolute;
       padding: 50px;
+      top: 700px;
       background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com opacidade */
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
@@ -72,12 +119,52 @@
       background-color: #9a208f;  
       color: white;
     }
+
+    #bomDia2811 {
+      background-color: rgb(70, 3, 42);  
+      color: white;
+    }
     
     .accessButton:hover {
       background-color: darken(#87cefa, 10%); /* Escurece a cor ao passar o mouse */
     }
+
+   .mySlides {
+      display: none;
+    }
+
+    .img {
+      max-width: 500px;
+      height: 500px;
+      width: auto;
+      height: auto;
+    }
+    
   </style>
 </head>
+
+<body>
+
+  <div class="slideshow-container">
+    <h2 class="slideshow-header">Bons dias com imagens autorais de Vanessa.</h2>
+
+    <div class="mySlides">
+      <img src="imagem1.jpeg" alt="Imagem 1" class="img">
+    </div>
+  
+    <div class="mySlides">
+      <img src="imagem2.jpg" alt="Imagem 2" class="img">
+    </div>
+  
+    <div class="mySlides">
+      <img src="imagem3.jpg" alt="Imagem 3" class="img">
+    </div>
+  
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+</body>
 
 <body>
   <div id="mainContent">
@@ -89,6 +176,7 @@
     <button id="bomDia1711" class="accessButton" onclick="redirectToOtherPage('https://diegorafhaell.github.io/pertubandoavanessa/bomdia17.html')">Bom dia - 17/11/2023</button>
     <button id="bomDia2411" class="accessButton" onclick="redirectToOtherPage('https://diegorafhaell.github.io/pertubandoavanessa/bomdia24.html')">Bom dia - 24/11/2023</button>
     <button id="bomDia2711" class="accessButton" onclick="redirectToOtherPage('https://diegorafhaell.github.io/pertubandoavanessa/bomdia27.html')">Bom dia - 27/11/2023 </button>
+    <button id="bomDia2811" class="accessButton" onclick="redirectToOtherPage('https://diegorafhaell.github.io/pertubandoavanessa/bomdia28.html')">Bom dia - 28/11/2023 </button>
   </div>
   
 
@@ -97,6 +185,39 @@
       window.location.href = pageURL;
     }
   </script> 
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+  
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+  
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+  
+    function showSlides(n) {
+      let i;
+      const slides = document.getElementsByClassName("mySlides");
+  
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+  
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+  
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+  
+      slides[slideIndex - 1].style.display = "block";
+    }
+  </script>
+
 </body>
 
 </html>

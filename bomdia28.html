@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bom dia, Vanessita!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://wallpapercg.com/download/cute-hello-kitties-3840x2160-15956.png') center/cover no-repeat;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+
+        #mainContent {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+
+        #texto {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            max-width: 800px;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        audio {
+            display: none;
+        }
+
+        @media only screen and (max-width: 600px) {
+            #texto {
+                max-width: 100%;
+            }
+        }
+
+        .foto {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body onload="playMusic()">
+
+    <div id="mainContent">
+        <h1>Bom dia Vanessa!</h1>
+        <p>trabalhar é chato ai eu passo o tempo fazendo isso aqui, é divertido.</p>
+    </div>
+
+    <button id="playButton" onclick="playMusic()">Iniciar Música</button>
+    <button id="pauseButton" onclick="pauseMusic()" style="display: none;">Pausar Música</button>
+
+    <div id="mainContent">
+        <p><b>Oi Vanessa! 😊 Que a paz esteja contigo nesta terça-feira. Como nos ensina o Salmo 118:24:</b></p>
+        <p><i>"Este é o dia que o Senhor fez; regozijemo-nos e alegremo-nos nele!"</i></p>
+        <p>Que este salmo ilumine seu dia, trazendo alegria e gratidão. Tenha uma jornada abençoada!</p>   
+    </div>
+
+
+
+    <div id="texto">
+
+        <h1>Continuação da historia</h1>
+
+        <img class="foto" src="choro.gif">
+
+        <p>A vida, muitas vezes, apresenta desafios inesperados. Vanessa, devido a circunstâncias pessoais, precisou retornar à sua cidade natal, Rondonópolis. Essa mudança repentina colocou uma nova dinâmica em sua relação com Son.</p>
+
+        <p>Diante da distância imposta, eles decidiram dar um tempo. Foi uma decisão difícil, mas ambos compreendiam a necessidade de Vanessa cuidar de assuntos pessoais em sua cidade. As despedidas foram carregadas de emoção, mas a promessa de reencontro pairava no ar.</p>
+      
+        <p>Son: "Eu entendo, Vanessa. Você precisa resolver essas coisas em Rondonópolis, e eu estarei aqui, esperando por você. Vamos dar um tempo, mas não se esqueça de que estou ao seu lado, mesmo que à distância."</p>
+      
+        <p>Vanessa, com um sorriso triste: "Son, você é incrível. Obrigada por compreender. Eu prometo que assim que tudo se acertar, voltarei para perto de você."</p>
+      
+        <p>A comunicação continuou, mas agora por meio de mensagens, chamadas de vídeo e a saudade começou a se fazer presente. Son, durante esse tempo, concentrou-se no campo, usando o esporte como uma válvula de escape para a distância que sentia.</p>
+      
+        <p>Enquanto isso, Vanessa enfrentava seus desafios em Rondonópolis, fortalecendo-se e resolvendo as questões pendentes. Ela nunca deixou de pensar em Son e na conexão especial que compartilhavam.</p>
+      
+        <p>À medida que os meses passavam, a distância começava a pesar. O vazio da ausência de Vanessa afetava a rotina de Son, e as chamadas de vídeo tornavam-se momentos agridoces.</p>
+      
+        <p>Vanessa, ao perceber o impacto em Son, tomou uma decisão difícil. Em uma chamada de vídeo, ela disse com lágrimas nos olhos: "Son, a distância está sendo mais difícil do que eu imaginava. Eu ainda te amo, mas acho que precisamos dar um tempo mais longo, pelo menos até eu resolver tudo por aqui."</p>
+      
+        <p>Son, com uma expressão triste: "Vanessa, eu entendo. Vamos dar o tempo que for necessário. Eu estarei aqui quando você estiver pronta."</p>
+      
+        <p>A ligação foi encerrada, deixando Son com um coração pesado. A tristeza da separação temporária pairava sobre ambos, enquanto enfrentavam a realidade dolorosa de estarem separados. O tempo, por enquanto, tornou-se o inimigo que os mantinha afastados, mas a esperança de um reencontro futuro permanecia viva, mesmo que distante.</p>      
+    </div>
+
+    <div id="texto">
+        <!-- Sua história aqui -->
+    </div>
+
+    <script>
+        var audio = new Audio('choro.mp3');
+
+        function playMusic() {
+            audio.play();
+            document.getElementById('playButton').style.display = 'none';
+            document.getElementById('pauseButton').style.display = 'inline-block';
+        }
+
+        function pauseMusic() {
+            audio.pause();
+            document.getElementById('playButton').style.display = 'inline-block';
+            document.getElementById('pauseButton').style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>
