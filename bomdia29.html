@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bom dia, Vanessita!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://wallpapercg.com/download/cute-hello-kitties-3840x2160-15956.png') center/cover no-repeat;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+
+        #mainContent {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+
+        #texto {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            max-width: 800px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        audio {
+            display: none;
+        }
+
+        @media only screen and (max-width: 600px) {
+            #texto {
+                max-width: 100%;
+            }
+        }
+
+        .foto {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body onload="playMusic()">
+
+    <div id="mainContent">
+        <h1>Bom dia Vanessa!</h1>
+        <p>hoje to cansado, começa minhas prova, e ai uns bagui do serviço ta paia</p>
+    </div>
+
+    <button id="playButton" onclick="playMusic()">Iniciar Música</button>
+    <button id="pauseButton" onclick="pauseMusic()" style="display: none;">Pausar Música</button>
+
+    <div id="mainContent">
+
+        <p><b>Que esta quarta-feira seja cheia de luz e inspiração.</b></p>
+        <p><b><p>Em Provérbios 3:5-6, encontramos uma orientação valiosa:</p>
+            <blockquote>
+                <p>"Confie no Senhor de todo o seu coração e não se apoie em seu próprio entendimento; reconheça o Senhor em todos os seus caminhos, e ele endireitará as suas veredas."</p>
+            </blockquote>
+            <p>Que esta mensagem te lembre da importância de confiar no plano divino, mesmo quando os caminhos parecem incertos. Que sua quarta-feira seja abençoada, guiada pela sabedoria e graça de Deus. 🙏💖</p>
+       </div>
+
+    <p><h1>↧</h1></p>
+
+    <div id="texto">
+
+        <h1>Sem historia hj</h1>
+
+        <p>quero morrer</p>
+
+        </div>
+
+    <div id="texto">
+        <!-- Sua história aqui -->
+    </div>
+
+    <script>
+        var audio = new Audio('https://diegorafhaell.github.io/pertubandoavanessa/PUTAQUEPARIU.mp3');
+
+        function playMusic() {
+            audio.play();
+            document.getElementById('playButton').style.display = 'none';
+            document.getElementById('pauseButton').style.display = 'inline-block';
+        }
+
+        function pauseMusic() {
+            audio.pause();
+            document.getElementById('playButton').style.display = 'inline-block';
+            document.getElementById('pauseButton').style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>
